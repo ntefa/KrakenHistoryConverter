@@ -1,37 +1,37 @@
 # Kraken History Converter
 
-The Kraken History Converter is a Python script that converts transaction history data from Kraken cryptocurrency exchange into a customized CSV format. It handles two different types of input CSV files and performs the necessary data transformations to generate an output CSV file with the desired format.
+The Kraken History Converter is a Python script that converts transaction history data from Kraken cryptocurrency exchange into a CSV format suited for OKIPO. OKIPO is a cryptocurrency investment and tax reports tracking app. More information can be found at https://okipo.io. 
+
+This script handles the ledger and trades csvs from Kraken and performs the necessary data transformations to generate an output CSV file with the desired format.
 
 ## Features
 
-- Converts transaction history data from Kraken into a custom CSV format
+- Converts transaction history data from Kraken into a OKIPO CSV format
 - Handles two types of input CSV files with different column structures
 - Parses datetime strings in various formats
 - Extracts specific columns and applies data transformations
 - Generates an output CSV file with the transformed data
 
 ## Requirements
-
+```console
 - Python 3.x
-
+```
 ## Usage
 
 1. Clone the repository:
 
    git clone https://github.com/ntefa/KrakenHistoryConverter.git
-2. Install the required dependencies:
-    
-    pip install -r requirements.txt
-3. Modify the config.py file:
-    Update the input_file1 and input_file2 variables with the paths to your input CSV files.
-4.  Prepare your input CSV files:
-    For the first type of input CSV file, ensure that it follows the format described in the example CSV.
-    For the second type of input CSV file, ensure that it follows the format described in the example CSV.
-5. Run the script:
-
+2. Modify the config.py file:
+    Update the input and output variables with the paths to your input and output CSV files.
+3.  Prepare your input CSV files:
+    The first one is the trades.csv;
+    The second one is the ledger.csv.
+    Both can be exported from Kraken UI
+4. Run the script:
+    ```console  
     python main.py
-
-6. The script will generate an output CSV file named output.csv containing the converted data.
+    ```
+5. The script will generate an output CSV file named output.csv containing the converted data.
 
 ## Customization
 
@@ -40,5 +40,3 @@ If you need to customize the data transformation logic or modify the CSV output 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-Please note that this is the markdown version of the text, which is meant to b
