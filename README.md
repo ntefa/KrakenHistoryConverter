@@ -19,8 +19,10 @@ This script handles the ledger and trades csvs from Kraken and performs the nece
 ## Usage
 
 1. Clone the repository:
-
+   ```console
    git clone https://github.com/ntefa/KrakenHistoryConverter.git
+   ```
+
 2. Modify the config.py file:
     Update the input and output variables with the paths to your input and output CSV files.
 3.  Prepare your input CSV files:
@@ -31,7 +33,7 @@ This script handles the ledger and trades csvs from Kraken and performs the nece
     ```console  
     python main.py
     ```
-5. The script will generate an output CSV file named output.csv containing the converted data.
+5. The script will generate an output CSV file named kraken_history.csv containing the converted data.
 
 ## Customization
 

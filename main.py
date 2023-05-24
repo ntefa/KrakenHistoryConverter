@@ -1,5 +1,7 @@
 from src.csv_handler import initialize_csv, process_trades, process_ledger
 
+#TODO cut decimals of amounts to second
+
 def main():
     # Initialize the CSV with headers
     initialize_csv()

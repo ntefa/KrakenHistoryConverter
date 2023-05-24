@@ -21,5 +21,8 @@ def parse_currency_pair(pair):
 
 def parse_currency_staking(asset):
     # Remove the last two characters to get the currency
-    currency = asset[:-2]
+    if asset[-2:] == ".S":
+        currency = asset[:-2]
+    else:
+        currency=asset
     return currency

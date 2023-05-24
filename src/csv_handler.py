@@ -3,13 +3,13 @@ import csv
 from src.utils import format_datetime, parse_currency_pair,parse_currency_staking
 
 def initialize_csv():
-    headers = ['Data', 'Importo Ricevuto', 'Valuta Ricevuta', 'Valuta Inviata', 'Importo Inviato', 'Commissione', 'Valuta Commissione']
+    headers = ['Date', 'Received Amount', 'Received Currency', 'Sent Amount', 'Sent Currency', 'Fee Amount', 'Fee Currency']
     with open(config.OUTPUT_CSV, 'w', newline='') as output:
         writer = csv.writer(output)
         writer.writerow(headers)
         
-def append_data(time, received_amount, received_currency, sent_currency, sent_amount, fee):
-    data = [time, received_amount, received_currency, sent_currency, sent_amount, fee, 'EUR']
+def append_data(time, received_amount, received_currency, sent_amount,sent_currency , fee):
+    data = [time, received_amount, received_currency, sent_amount,sent_currency , fee, 'EUR']
     with open(config.OUTPUT_CSV, 'a', newline='') as output:
         writer = csv.writer(output)
         writer.writerow(data)
@@ -23,7 +23,7 @@ def process_trades():
             received_currency, sent_currency = parse_currency_pair(row["pair"])
             sent_amount = row['cost']
             fee = row['fee']
-            append_data(time, received_amount, received_currency, sent_currency, sent_amount, fee)
+            append_data(time, received_amount, received_currency, sent_amount,sent_currency ,fee)
             
             
 def process_ledger():
